@@ -1,0 +1,46 @@
+---
+title: "Visual representation of paleogeoscientific data"
+author: "Simon Goring"
+date: "April 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## PaleoVisualization Background.
+
+### Data Access
+
+#### Visualization Representation
+
+This sheet contains a number of columns, intended to represent 
+
+```{r, echo = TRUE, warning=FALSE, message=FALSE, results='hide'}
+library(dplyr)
+
+source('R/file_download.R')
+testing <- try(pull_sheets("Visualization Representation"))
+
+```
+
+##### Current Issues
+
+We want all of the subsequent check-boxes to be checked.  
+
+  * `r ifelse(any(stringr::str_detect(colnames(testing), "^X\\d")), "&#x2610;", "&#x2611;")` No unnamed columns are being imported.
+  * `r ifelse(any(rowSums(!is.na(testing))==0), "&#x2610;", "&#x2611;")` All rows contain at least one entry.
+  * `r ifelse(!any(duplicated(testing[,1:2])), "&#x2610;", "&#x2611;")` The first two columns represent the data unique key.
+  * `r ifelse(!any(duplicated(testing[,1:2])), "&#x2610;", "&#x2611;")` The first two columns represent the data unique key.
+
+  
+#### Data Output
+
+Current data structure:
+
+```{r, echo = FALSE}
+
+DT::datatable(testing)
+
+```
