@@ -2,6 +2,8 @@
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) 
 
+![](images/visualization.png)
+
 A broad survey of visualization techniques in the geoscientific literature, based on publications that cite Neotoma.
 
 ## Contributors
@@ -15,5 +17,7 @@ This repository is intended to act as a data resource for work by [Ross Thorn](h
 The role of this repository is two-fold:
 
 1.  It provides the testing interface to move hand-coded data from their original Google Sheets format into a machine-readable format that can be distributed through this GitHub repository.
+
+This content is contained within the Rmd file [generate_data.Rmd](), or as rendered as [generate_data.html](http://htmlpreview.github.io/?https://github.com/NeotomaDB/PaleoVisualization/blob/master/generate_data.html).  As indicated, this work is under development.
 
 2.  To provide vignettes of the data that show several interesting and informative methods for displaying the data, that underly the strengths and weaknesses of this dataset, to provide some guidance to users who wish to reuse this data.
